@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <?php
+    if($_POST["Message"]) {
+        mail("john@johndoe.com", "Here is the sample subject line",
+        $_POST["Message"]. " From: jane@janedoe.com");
+        echo "Message sent!";
+    }
+    ?>
+    <form action="" method="post">
+        <label for="Message">Message:</label>
+        <textarea name="Message" id="Message" rows="4" cols="50"></textarea>
+        <br>
+        <input type="submit" value="Send Message">
+    </form>
+</body>
+</html>
